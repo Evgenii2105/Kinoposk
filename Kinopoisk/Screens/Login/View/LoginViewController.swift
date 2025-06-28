@@ -15,6 +15,7 @@ final class LoginViewController: UIViewController {
         let container = UIView()
         return container
     }()
+    
     private let nameLabel: UILabel = {
         let nameLabel = UILabel()
         nameLabel.text = "Кинопоиск"
@@ -47,6 +48,7 @@ final class LoginViewController: UIViewController {
             attributes: [.foregroundColor: UIColor.lightGray]
         )
         userPasswordTextField.layer.cornerRadius = 8
+        userPasswordTextField.isSecureTextEntry = true
         userPasswordTextField.layer.borderWidth = 1
         userPasswordTextField.layer.borderColor = UIColor.lightGray.cgColor
         userPasswordTextField.borderStyle = .roundedRect
@@ -116,7 +118,6 @@ final class LoginViewController: UIViewController {
             loginButton.trailingAnchor.constraint(equalTo: container.trailingAnchor, constant: -8),
             loginButton.heightAnchor.constraint(equalToConstant: 44)
         ])
-        
     }
     
     private func TextFieldDelegate() {
@@ -124,12 +125,13 @@ final class LoginViewController: UIViewController {
         userPasswordTextField.delegate = self
     }
     
-    @objc
     private func tappedLoginButton() {
         presenter?.hadleAuth(
             login: userNameTextField.text,
             password: userPasswordTextField.text
         )
+        userNameTextField.text = ""
+        userPasswordTextField.text = ""
     }
 }
 

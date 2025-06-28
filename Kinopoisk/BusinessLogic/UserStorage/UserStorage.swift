@@ -7,10 +7,6 @@
 
 import Foundation
 
-//protocol UserStorage: AnyObject {
-//    func saveLoginAndPassword(login: String, password: String)
-//}
-
 final class UserStorageimpl {
     
     enum ValidationState {

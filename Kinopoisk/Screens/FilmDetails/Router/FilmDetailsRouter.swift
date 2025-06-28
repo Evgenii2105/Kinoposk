@@ -8,5 +8,5 @@
 import Foundation
 
 protocol FilmDetailsRouter: AnyObject {
-    
+    func showDetailsFilm(film: FilmDetails) 
 }

@@ -8,5 +8,5 @@
 import Foundation
 
 protocol FilmsListView: AnyObject {
-    
+    func didFilms(films: [FilmsListItem])
 }

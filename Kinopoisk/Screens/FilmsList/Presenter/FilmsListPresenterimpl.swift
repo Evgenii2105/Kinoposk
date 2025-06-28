@@ -16,4 +16,35 @@ final class FilmsListPresenterimpl: FilmsListPresenter {
         self.view = view
         self.interactor = interactor
     }
+    
+    func setupDataSource() {
+        interactor.setupDataSource()
+    }
+    
+    func showDetailsFilm(film: FilmsListItem) {
+        interactor.showDetailsFilm(film: film)
+    }
+    
+    func performLogaut() {
+        interactor.performLogaut()
+    }
+    
+    func searchFilms(with query: String?) {
+        interactor.searchFilms(with: query)
+    }
+    
+    func sort(by film : FilmsListViewController.FilmSorting) {
+        interactor.sort(by: film)
+    }
+    
+    func filter(by year: GenericPickerViewController.YearFilter) {
+        interactor.filter(by: year)
+    }
+}
+
+extension FilmsListPresenterimpl: FilmsListPresenterOutput {
+    
+    func didFilms(films: [FilmsListItem]) {
+        view?.didFilms(films: films)
+    }
 }

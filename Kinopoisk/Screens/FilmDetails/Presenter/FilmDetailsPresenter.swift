@@ -8,5 +8,7 @@
 import Foundation
 
 protocol FilmDetailsPresenter: AnyObject {
-    
+    func setupDataSource()
+    func makeFilmsSimilarFilms(filmId: Int)
+    func didDetailsFilms()
 }

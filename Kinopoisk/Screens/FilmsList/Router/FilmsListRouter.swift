@@ -8,5 +8,6 @@
 import Foundation
 
 protocol FilmsListRouter: AnyObject {
-    
+    func showDetailsFilm(film: FilmDetails)
+    func exitScreen() 
 }
